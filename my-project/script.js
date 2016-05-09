@@ -1,19 +1,59 @@
-//board starting
-//
+//Tic Tac Toe
+var playerA
+var playerB
+var message
+var reset
+var winner
 
-window.onload = startGame;
-
-function startGame() {
-	var turn = "X";
-
-setMessage(turn + "'s turn.");
-
-}
+var turn = "X"
+var cells = document.getElementsByTagName("td")
 
 
-function setMessage(msg){
-	document.getElementbyId("message").textContent = msg;
-}
+
+
+// pull element tags//
+
+//define location tags to pull into functions
+
+
+// implement functions //
+
+// getPlayerMove();
+// getComputerMove();
+// ui_message();
+// resetGame();
+// trackKeeper();
+
+
+
+//on load
+//board start
+//event listeners
+//game logic
+
+
+window.onload = startGame();
+
+var cells = document.querySelectorAll("td")
+
+
+function xoListener(){
+  for (var i = cells.length - 1; i >= 0; i--) {
+    cells[i].addEventListener("click", console.log("playXorO"));
+  }
+};
+
+
+var turn = "X"
+
+function playXorO(){
+	if (turn == "X") {
+		turn = "O";
+	} else {
+		turn = "X";
+	};
+
+};
 
 
 
