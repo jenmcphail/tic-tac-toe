@@ -33,15 +33,37 @@ function startGame() {
 	
 
 $(".cell").on("click", function(){
-	$(this).text(playerTurn);
-	if (playerTurn == "X"){
+
+	if ($(this).text() === "") {
+
+		$(this).text(playerTurn);
+
+		console.log($(this));
+
+		switchTurn();
+
+	} else {
+
+		setMessage("Hey you can't move there!");
+
+	}
+
+
+});
+
+
+
+function switchTurn(){
+if (playerTurn === "X"){
 		playerTurn = "O";
 	} else {
 		playerTurn = "X"
 	}
 
 	setMessage("It's " + playerTurn + "'s turn.")
-});
+
+	// allowedMove();
+};
 
 
 
