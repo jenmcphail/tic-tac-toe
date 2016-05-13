@@ -1,8 +1,6 @@
 
 window.onload = startGame();
 
-var winningCombos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 1], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
-
 function startGame() {
 	playerTurn = "X"
 
@@ -50,12 +48,6 @@ if (playerTurn === "X"){
 
 };
 
-function checkWinner(){
-	//iterate through each cell by id
-	//match the id to the winning combos
-	//display winner message based on x turn and o turn
-}
-
 
 $(".button").on("click", function(){
 	location.reload();
@@ -66,5 +58,6 @@ $(".button").on("click", function(){
 	// Prototype of a tic tac toe board?
 	// objects for each function: 
 		// x-turn, 0-turn, switch, winner
-		// each function would contain:
-			// related message
+		// each function would contain a related message
+
+//Next Steps: Attempt to refactor in to object-oriented code with starting with above ideas.
