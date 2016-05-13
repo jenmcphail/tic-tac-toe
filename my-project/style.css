@@ -94,6 +94,12 @@ table tr th:last-child {
 	max-width: 600px
 }
 
+.test {
+
+	background-color: blue;
+
+}
+
 .button:hover{
 	cursor: pointer;
 }
@@ -109,6 +115,13 @@ table:hover{
 	margin: 0 auto;
 	text-align: center;
 	font-family: Tahoma;
+}
+
+.cell{
+	font-family: Tahoma;
+	font-size: 30px
+	font-weight: bold;
+	text-align: center;
 }
 
 

@@ -13,42 +13,48 @@ var message
 var reset
 var winner
 
-var turn = "X"
-var cells = document.getElementsByTagName("td")
 
 
 //what the page should look like on load:
 window.onload = startGame();
 
-var cells = document.querySelectorAll("td")
 
 function startGame() {
-	xoListener();
+	playerTurn = "X"
+
+	setMessage("It's " + playerTurn + "'s turn.")
  }
 
+ function setMessage(msg){
+	document.getElementById("message").textContent = msg;
+}
 
-//setting up the event listeners for the board.
-//WHHHYYYY DOESN'T IT WOOOOOORK???!?!?!?!?
+// function switchTurn() {
+	
 
-function xoListener(){
-  for (var i = cells.length - 1; i >= 0; i--) {
-    cells[i].addEventListener("click", console.log("playXorO"));
-  }
-};
-
-
-//if xoListener ever gets to work, it will call on this function which should switch back and forth between x's and o's.
-
-var turn = "X"
-
-function playXorO(){
-	if (turn == "X") {
-		turn = "O";
+$(".cell").on("click", function(){
+	$(this).text(playerTurn);
+	if (playerTurn == "X"){
+		playerTurn = "O";
 	} else {
-		turn = "X";
-	};
+		playerTurn = "X"
+	}
 
-};
+	setMessage("It's " + playerTurn + "'s turn.")
+});
+
+
+
+
+
+// function playXorO(){
+// 	if (turn == "X") {
+// 		turn = "O";
+// 	} else {
+// 		turn = "X";
+// 	};
+
+// };
 
 
 //pseudo code for a switch statement to determine the winner:
