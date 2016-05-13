@@ -1,23 +1,7 @@
-//Tic Tac Toe
 
-//Sections/organization:
-	//on load
-	//board start
-	//event listeners
-	//game logic
-
-//variables - placed in global scope so all functions can reference.
-var playerA
-var playerB
-var message
-var reset
-var winner
-
-
-
-//what the page should look like on load:
 window.onload = startGame();
 
+var winningCombos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 1], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
 
 function startGame() {
 	playerTurn = "X"
@@ -27,10 +11,9 @@ function startGame() {
 
  function setMessage(msg){
 	document.getElementById("message").textContent = msg;
-}
-
-// function switchTurn() {
+};
 	
+
 
 $(".cell").on("click", function(){
 
@@ -38,16 +21,18 @@ $(".cell").on("click", function(){
 
 		$(this).text(playerTurn);
 
-		console.log($(this));
+		if (playerTurn === "X") {
+			$(this).addClass("xTurn");
+		} else {
+			$(this).addClass("oTurn");
+		}
 
 		switchTurn();
 
 	} else {
 
 		setMessage("Hey you can't move there!");
-
-	}
-
+	};
 
 });
 
@@ -56,79 +41,30 @@ $(".cell").on("click", function(){
 function switchTurn(){
 if (playerTurn === "X"){
 		playerTurn = "O";
+
 	} else {
 		playerTurn = "X"
 	}
 
 	setMessage("It's " + playerTurn + "'s turn.")
 
-	// allowedMove();
 };
 
+function checkWinner(){
+	//iterate through each cell by id
+	//match the id to the winning combos
+	//display winner message based on x turn and o turn
+}
 
 
+$(".button").on("click", function(){
+	location.reload();
+});
 
 
-// function playXorO(){
-// 	if (turn == "X") {
-// 		turn = "O";
-// 	} else {
-// 		turn = "X";
-// 	};
-
-// };
-
-
-//pseudo code for a switch statement to determine the winner:
-	// switch (e){
-	// 	case 1:
-	// 		x = a, b, c
-	// 		alert "X wins!"
-	// 	break;
-
-	// 	case 2:
-	// 		x = d, e, f
-	// 		alert "X wins!"
-	// 	break;
-
-	// 	case 3:
-	// 		x = g, h, i
-	// 		alert "X wins!"
-	// 	break;
-
-	// 	case 4:
-	// 		x = g, e, c
-	// 		alert "X wins!"
-	// 	break;
-
-	// 	case 5:
-	// 		x = a, e, i
-	// 		alert "X wins!"
-	// 	break;
-
-	// 	case 6:
-	// 		o = a, b, c
-	// 		alert "O wins!"
-	// 	break;
-
-	// 	case 7:
-	// 		o = d, e, f
-	// 		alert "O wins!"
-	// 	break;
-
-	// 	case 8:
-	// 		o = g, h, i
-	// 		alert "O wins!"
-	// 	break;
-
-	// 	case 9:
-	// 		o = g, e, c
-	// 		alert "O wins!"
-	// 	break;
-
-	// 	case 10:
-	// 		o = a, e, i
-	// 		alert "O wins!"
-	// 	break;
-
-	// }
+//Ideas to refactor in to object-oriented code:
+	// Prototype of a tic tac toe board?
+	// objects for each function: 
+		// x-turn, 0-turn, switch, winner
+		// each function would contain:
+			// related message

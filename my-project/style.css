@@ -4,9 +4,9 @@
 
 table {
 border-collapse: collapse;
-height: 30em;
-width: 30em;
-margin-top: 50px
+height: 500px;
+width: 600px;
+margin-top: 50px;
 }
 table td, table th {
   border: 10px solid #794EA3;
@@ -27,9 +27,9 @@ table tr th:last-child {
   border-right: 0;
 }
 
-/*body{
+body{
 	background: black
-}*/
+}
 
 #header{
 	margin: center;
@@ -91,7 +91,7 @@ table tr th:last-child {
 
 #grid{
 	margin: 0 auto;
-	max-width: 600px
+	width: 600px;
 }
 
 .test {
@@ -109,7 +109,7 @@ table:hover{
 }
 
 #message{
-	color: black;
+	color: white;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	margin: 0 auto;
@@ -118,10 +118,20 @@ table:hover{
 }
 
 .cell{
+	width: 200px;
 	font-family: Tahoma;
 	font-size: 30px
 	font-weight: bold;
 	text-align: center;
+	color: white;
+}
+
+.oTurn {
+	background-color: #b0a6a6;
+}
+
+.xTurn {
+	background-color: #4a4d58;
 }
 
 
