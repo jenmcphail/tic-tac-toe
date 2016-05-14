@@ -28,7 +28,8 @@ table tr th:last-child {
 }
 
 body{
-	background: black
+	background: url("https://newevolutiondesigns.com/images/freebies/galaxy-wallpaper-11.jpg");
+	background-size: cover;
 }
 
 #header{

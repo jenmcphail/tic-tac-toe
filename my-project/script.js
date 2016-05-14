@@ -29,7 +29,7 @@ $(".cell").on("click", function(){
 
 	} else {
 
-		setMessage("Hey you can't move there!");
+		setMessage("Hey! You can't move there!");
 	};
 
 });
@@ -52,6 +52,15 @@ if (playerTurn === "X"){
 $(".button").on("click", function(){
 	location.reload();
 });
+
+// pseudo code for how to display message for winner and end game
+
+// function winner(){
+// 	switch statement for each case:
+// 		get element by id
+// 		if "X" || "O" === #1, #2, #3 || #4, #5, #6 || #7, #8, #9 || #1, #4, #7 || #2, @5, #8 || #3, #6, #9 || #1, #5, #9 || #3, #5, #7
+// 			return "winner!"
+// }
 
 
 //Ideas to refactor in to object-oriented code:
