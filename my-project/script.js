@@ -12,9 +12,7 @@ function startGame() {
 	document.getElementById("message").textContent = msg;
 };
 
-counter = 1;
-	
-
+var counter = 1;	
 
 $(".cell").on("click", function(){
 
@@ -31,7 +29,6 @@ $(".cell").on("click", function(){
 		}
 
 		switchTurn();
-
 		
 
 	} else {
@@ -63,16 +60,14 @@ $(".button").on("click", function(){
 	location.reload();
 });
 
-// var winningCombos = document.querySelectorAll(".cell")
-// console.log(winningCombos);
-
-// var checkCellX = document.querySelector(".xTurn")
-
-// var checkCellO = document.querySelector(".oTurn")
+// var checkWinner = document.querySelectorAll(".cell")
 
 // function getWinner(){
-// 	for (i = 0; i<=winningCombos.lenght; i++){
-// 		if 
+// 	for (i = 0; i <= checkWinner.length; i++){
+// 		if (document.getElementById("1").textContent === "X" && document.getElementById("#2").textContent === "X" && document.getElementById("#3").textContent === "X"){
+// 			console.log("hi");
+// 		}
 // 	}
+
 // }
 

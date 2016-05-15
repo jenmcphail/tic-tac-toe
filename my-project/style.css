@@ -28,7 +28,7 @@ table tr th:last-child {
 }
 
 body{
-	background: url("https://newevolutiondesigns.com/images/freebies/galaxy-wallpaper-11.jpg");
+	background-image: url("background-img.jpg");
 	background-size: cover;
 }
 
@@ -128,11 +128,11 @@ table:hover{
 }
 
 .oTurn {
-	background-color: #b0a6a6;
+	background-color: #a0a1a9
 }
 
 .xTurn {
-	background-color: #4a4d58;
+	background-color: #45464f
 }
 
 
