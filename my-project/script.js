@@ -1,4 +1,3 @@
-
 window.onload = startGame();
 
 function startGame() {
@@ -73,7 +72,7 @@ function getWinner(){
 		document.getElementById("2").textContent === " " && document.getElementById("5").textContent === " " && document.getElementById("8").textContent === " " ||
 		document.getElementById("3").textContent === " " && document.getElementById("6").textContent === " " && document.getElementById("9").textContent === " "){
 
-		console.log("Unicorn won!")
+		alert("Unicorn won!")
 		setMessage("Unicorn has won the game!")
 
 	} else if(document.getElementById("1").textContent === "  " && document.getElementById("2").textContent === "  " && document.getElementById("3").textContent === "  "||
@@ -85,8 +84,12 @@ function getWinner(){
 		document.getElementById("2").textContent === "  " && document.getElementById("5").textContent === "  " && document.getElementById("8").textContent === "  " ||
 		document.getElementById("3").textContent === "  " && document.getElementById("6").textContent === "  " && document.getElementById("9").textContent === "  ") {
 		
-		console.log("T-Rex won")
+		alert("T-Rex won")
 		setMessage ("T-rex has won the game!")
+
+// I know the issue is probably the else statement. 
+//It's satisfying the first or second if / else if and the not skipping to the else statement. 
+//Need to figure out how to fix this.
 
 	} else {
 		setMessage(playerTurn + "already won the game!")
@@ -97,4 +100,3 @@ function getWinner(){
 $(".button").on("click", function(){
 	location.reload();
 });
-
