@@ -128,11 +128,14 @@ table:hover{
 }
 
 .oTurn {
-	background-color: #a0a1a9
+	background: transparent url("rex.png") center no-repeat;
+
 }
 
 .xTurn {
-	background-color: #45464f
+	background: transparent url("unicorn.gif") center no-repeat;
+
 }
+
 
 

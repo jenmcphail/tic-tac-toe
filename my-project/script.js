@@ -2,9 +2,9 @@
 window.onload = startGame();
 
 function startGame() {
-	playerTurn = "X"
+	playerTurn = " "
 
-	setMessage("It's " + playerTurn + "'s turn.")
+	setMessage("It's Unicorn's turn.")
 
  }
 
@@ -20,14 +20,18 @@ $(".cell").on("click", function(){
 
 		$(this).text(playerTurn);
 
-		if (playerTurn === "X") {
+		if (playerTurn === " ") {
 			$(this).addClass("xTurn");
 			counter++
+			getWinner();
 		} else {
 			$(this).addClass("oTurn");
 			counter++
+			getWinner();
+			
 		}
 
+		
 		switchTurn();
 		
 
@@ -45,29 +49,52 @@ $(".cell").on("click", function(){
 
 
 function switchTurn(){
-if (playerTurn === "X"){
-		playerTurn = "O";
-		setMessage("It's " + playerTurn + "'s turn.")
+if (playerTurn === " " ){
+		playerTurn = "  ";
+		setMessage("It's T-Rex's turn.")
 
 	} else {
-		playerTurn = "X"
-		setMessage("It's " + playerTurn + "'s turn.")
+		playerTurn = " "
+		setMessage("It's Unicorn's turn.")
 	} 
 };
 
 
+
+// console.log shows the winner message, but using the set message function doesn't :( :(
+
+function getWinner(){
+	if (document.getElementById("1").textContent === " " && document.getElementById("2").textContent === " " && document.getElementById("3").textContent === " "||
+		document.getElementById("4").textContent === " " && document.getElementById("5").textContent === " " && document.getElementById("6").textContent === " " ||
+		document.getElementById("7").textContent === " " && document.getElementById("8").textContent === " " && document.getElementById("9").textContent === " " ||
+		document.getElementById("1").textContent === " " && document.getElementById("5").textContent === " " && document.getElementById("9").textContent === " " ||
+		document.getElementById("3").textContent === " " && document.getElementById("5").textContent === " " && document.getElementById("7").textContent === " " ||
+		document.getElementById("1").textContent === " " && document.getElementById("4").textContent === " " && document.getElementById("7").textContent === " " ||
+		document.getElementById("2").textContent === " " && document.getElementById("5").textContent === " " && document.getElementById("8").textContent === " " ||
+		document.getElementById("3").textContent === " " && document.getElementById("6").textContent === " " && document.getElementById("9").textContent === " "){
+
+		console.log("Unicorn won!")
+		setMessage("Unicorn has won the game!")
+
+	} else if(document.getElementById("1").textContent === "  " && document.getElementById("2").textContent === "  " && document.getElementById("3").textContent === "  "||
+		document.getElementById("4").textContent === "  " && document.getElementById("5").textContent === "  " && document.getElementById("6").textContent === "  " ||
+		document.getElementById("7").textContent === "  " && document.getElementById("8").textContent === "  " && document.getElementById("9").textContent === "  " ||
+		document.getElementById("1").textContent === "  " && document.getElementById("5").textContent === "  " && document.getElementById("9").textContent === "  " ||
+		document.getElementById("3").textContent === "  " && document.getElementById("5").textContent === "  " && document.getElementById("7").textContent === "  " ||
+		document.getElementById("1").textContent === "  " && document.getElementById("4").textContent === "  " && document.getElementById("7").textContent === "  " ||
+		document.getElementById("2").textContent === "  " && document.getElementById("5").textContent === "  " && document.getElementById("8").textContent === "  " ||
+		document.getElementById("3").textContent === "  " && document.getElementById("6").textContent === "  " && document.getElementById("9").textContent === "  ") {
+		
+		console.log("T-Rex won")
+		setMessage ("T-rex has won the game!")
+
+	} else {
+		setMessage(playerTurn + "already won the game!")
+	}
+		
+}
+
 $(".button").on("click", function(){
 	location.reload();
 });
-
-// var checkWinner = document.querySelectorAll(".cell")
-
-// function getWinner(){
-// 	for (i = 0; i <= checkWinner.length; i++){
-// 		if (document.getElementById("1").textContent === "X" && document.getElementById("#2").textContent === "X" && document.getElementById("#3").textContent === "X"){
-// 			console.log("hi");
-// 		}
-// 	}
-
-// }
 
