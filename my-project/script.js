@@ -33,6 +33,7 @@ $(".cell").on("click", function(){
 		
 		switchTurn();
 		
+		
 
 	} else {
 
